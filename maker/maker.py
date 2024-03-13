@@ -31,11 +31,14 @@ def choose_custom_help_dir(stdscr) -> str:
         return x
 
 def oobe(stdscr):
+    prfolder = "/".join(__file__.replace("\\","/").split("/")[0:-2])
+    nhfolder = prfolder + "/helps"
+    if not os.path.isdir(nhfolder):
+        os.mkdir(nhfolder)
     cursesplus.messagebox.showinfo(stdscr,["Welcome to FormHelp Maker.","You have not yet configured this program for this computer.","This short walkthrough will get you ready to make helpfiles in no time."])
     cursesplus.displaymsg(stdscr,["Looking for pre-made helps folder..."],False)
-    prfolder = "/".join(__file__.replace("\\","/").split("/")[0:-2])
+    
     #cursesplus.messagebox.showinfo(stdscr,[prfolder])
-    nhfolder = prfolder + "/helps"
     if not os.path.isdir(nhfolder):
         APPDATA["helpfolder"] = choose_custom_help_dir(stdscr)
     else:
@@ -44,6 +47,7 @@ def oobe(stdscr):
         else:
             APPDATA["helpfolder"] = choose_custom_help_dir(stdscr)
     APPDATA.write()
+    
     cursesplus.messagebox.showinfo(stdscr,["FormHELP Maker is now set up."])
 
 def generate_temp_directory() -> str:
