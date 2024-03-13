@@ -1,0 +1,19 @@
+This folder should not be included in final builds. It contains the maker.py file which helps you make help files
+
+===== Setting up environment =====
+
+ON WINDOWS
+
+- If you have not already, download Python 3.11.x from https://www.python.org
+- The reason 3.11 is needed is because a very needed library does not work with 3.12
+- Install the python you just installed. Make sure that the "Add Python to PATH" is checked.
+- Run `py -m pip install windows-curses cursesplus markdown2 enderbyteprograms` on the command line
+- If the above command says "py is not found," reboot your computer.
+
+ON LINUX
+
+- Your Linux Distro should already come with Python installed.
+- Make sure you have the python3-pip package installed (or python-pip if on ARCH).
+- Run the following command: `pip3 install cursesplus markdown2 enderbyteprograms`
+
+===== You are now ready to go =====

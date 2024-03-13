@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Help</title>
+    <style>
+        #sul {
+            list-style-type: none;
+            padding: 0;
+            height: 200px;
+            overflow: auto;
+            margin: 0;
+        }
+        input {
+            background-image: url('searchicon.png');
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+        #sul li {
+            border: 1px solid #ddd;
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block
+        }
+
+        #sul li:hover:not(.header) {
+            background-color: #eee;
+        }
+        hr {
+            border: none;
+            height: 5px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body style="font-family: Helvetica;background-color: rgb(197, 217, 224);">
+    <h1>Form Help</h1>
+    <input type="text" title="Type a question" placeholder="Enter your question" onkeyup="main()" id="search">
+    <ul id="sul">
+        <p id="waiter">Please wait...</p>
+    </ul>
+    <p id="counter">0 items found</p>
+    <h3 id="helpertut">Make a search above to load</h3>
+    <hr>
+    <div id="help">
+        
+    </div>
+    <script src="js/help.js"></script>
+    <script>init()</script>
+</body>
+</html>
